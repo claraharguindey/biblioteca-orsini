@@ -35,8 +35,7 @@ def get_filters():
          'name': _("Autoras"),
         },
         {'url': url_for('tags_view'),
-         'name': _("Tags"),
-         'iconclass': "fa fa-list"},
+         'name': _("Tags"),},
         # {'url': url_for('idiomas'),
         # 'name': _("Langueges"),
         # 'fa-icon-class': "fa fa-language"},
@@ -207,31 +206,37 @@ def format_elements_for_template(elements):
 # Views
 
 
-@app.route('/books/')
+@app.route('/')
 def index():
-    return render_template('index.html',
-                           title="",
-                           general_filters=get_filters(),
-                           stats=get_stats(),
-                           admin=get_admin_data(),
+    """Show the books"""
+    books = get_books()
+    tags = get_tags_with_url()
+    tags = format_elements_for_template(tags)
+
+    return render_template("index.html",
+                           entries=tags,
+                           books=books,
+                           general_filters=get_filters()
                            )
 
 
-@app.route('/')
+@app.route('/books/')
 def all_the_books_view():
     """Show the books"""
     books = get_books()
+    tags = get_tags_with_url()
+    tags = format_elements_for_template(tags)
 
-    return render_template("list_of_books.html",
+    return render_template("index.html",
+                           entries=tags,
                            books=books,
-                           title=_("All books:"),
                            general_filters=get_filters()
                            )
 
 
 @app.route('/author/<path:author_name>/')
 def author_view(author_name):
-    """Muestra los books de un author"""
+    """Muestra los libros de un autor"""
     if not author_name:
         return redirect(url_for('authors_view'))
 

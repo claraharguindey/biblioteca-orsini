@@ -5,10 +5,10 @@
 }
 
 .navbar-item {
-    font-family: 'Sans';
+    font-family: "Sans";
     color: black;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 12px;
 }
 
 /* Estilo del grid de libros */
@@ -16,7 +16,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 40px 16px;
-    padding: 0px 16px 180px 16px;
+    padding: 0px 16px 80px 16px;
     width: 100%;
     align-content: start;
 }
@@ -53,32 +53,77 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
+}
+
+.book-title,
+.book-author,
+.book-date {
     padding: 4px;
     text-decoration: none;
     background-color: white;
-    border-bottom: 2px solid var(--lightgray);
-}
-
-.book-title {
-    font-size: 13px;
-    margin-bottom: 4px;
+    font-size: 12px;
+    border-bottom: 2px solid #e5e5e5;
     display: flex;
     justify-content: space-between;
+    text-align: right;
 }
 
-.book-author {
-    font-size: 13px;
-    color: #555;
+.book-tags {
+    flex-wrap: wrap;
+    font-size: 1rem;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    min-height: 24px;
+    font-size: 12px;
+    display: flex;
+    flex-wrap: wrap;
 }
-
+.tags-list {
+    width: 50%;
+    padding: 16px;
+}
+.list-tag {
+    background: white;
+    color: #cf3d35;
+    padding: 4px 8px;
+    margin: 0px;
+    border-radius: 100px;
+    margin-bottom: 1px;
+}
+.tag {
+    background: #cf3d35;
+    color: black;
+    padding: 4px 8px;
+    margin: 0px;
+    border-radius: 100px;
+    margin-bottom: 1px;
+}
+footer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 8px 16px;
+    font-size: 12px;
+    text-align: center;
+}
+footer p {
+    font-size: 5vw;
+    line-height: 1;
+    color: #a4a4a4;
+    margin-top: 8px;
+}
+footer a {
+    color: black;
+    margin: 0px 4px;
+    transition: 0.2s;
+}
 /* Media Queries para ajustar el diseño en dispositivos móviles */
 @media (max-width: 768px) {
     .core {
         grid-template-columns: 1fr;
     }
-
 }
 
 @media (max-width: 480px) {

@@ -1,8 +1,32 @@
 {% extends "central.html" %}
 {% block listado %}
 
-{% macro genera_item_book(title, author, ruta_cover, tag, publication_date) %}
+
+{% macro genera_lista(entries) %}
+
+<div class="tags-list" style="display: flex; flex-wrap: wrap; gap: 10px;">
+    {% for key, value in entries|dictsort %}
+    {% for element in value %}
+    <div class="list-tag">
+        <a href="{{ element.url }}" title="{{ element.element | capitalize }}">
+            {{ element.element|truncate(50, True)|capitalize }}
+        </a>
+    </div>
+    {% endfor %}
+    {% endfor %}
+</div>
+{% endmacro %}
+
+{% macro genera_item_book(title, authors, ruta_cover, tags, publication_date) %}
 <a class="entrada" href="{{ url_for('book_view', book_name=urlencode(title)) }}">
+
+    <div class="book-tags">
+
+        {% for tag in tags %}
+        <span class="tag">{{ tag }}</span>{% if not loop.last %} {% endif %}
+        {% endfor %}
+
+    </div>
     <div class="portada">
         <img src="{{ url_for('get_book_cover', path=ruta_cover) }}" alt="{{ _('Book cover') }}">
     </div>
@@ -12,12 +36,16 @@
             <p>{{ title }}</p>
         </div>
         <div class="book-author">
-            <p>Autor</p>
-            <p>{{ author }}</p>
+            <p>Autor(es)</p>
+            <p>
+                {% for author in authors %}
+                {{ author }}{% if not loop.last %}, {% endif %}
+                {% endfor %}
+            </p>
         </div>
-        <div class="date">
-            <p>{{publication_date}}</p>
-            <p>{{ author }}</p>
+        <div class="book-date">
+            <p>Leer</p>
+            <img id="button" src="../static/img/Next.svg" alt="Leer más">
         </div>
     </div>
 </a>
@@ -26,15 +54,17 @@
 {% macro genera_columnas(books) %}
 {% for book in books %}
 <div class="book-column">
-    {{ genera_item_book(book.title, book.author, book.cover, book.tag) }}
+    {{ genera_item_book(book.title, book.authors, book.cover, book.tags) }}
 </div>
 {% endfor %}
 {% endmacro %}
 
 <div class="columns">
-    {% include "sidebar.html" %}
+    <!-- {% include "sidebar.html" %} -->
+    <div class="columns is-multiline files">
+        {{ genera_lista(entries) }}
+    </div>
     <div class="content column is-10">
-        <div class="title">{{ title|capitalize }}</div>
         <div class="core">
             {{ genera_columnas(books) }}
         </div>
