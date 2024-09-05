@@ -1,0 +1,88 @@
+.navbar {
+    width: 100%;
+    padding: 8px 16px;
+    background-color: white;
+}
+
+.navbar-item {
+    font-family: 'Sans';
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* Estilo del grid de libros */
+.core {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px 16px;
+    padding: 0px 16px 180px 16px;
+    width: 100%;
+    align-content: start;
+}
+
+/* Estilo para cada libro */
+.entrada {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: black;
+    z-index: 3;
+}
+
+.portada {
+    width: 100%;
+    display: flex;
+}
+
+.portada img {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+    filter: grayscale(1);
+    transition: filter 0.5s ease;
+}
+
+/* Cambia el filtro de la imagen al pasar el ratón */
+.entrada:hover .portada img {
+    filter: grayscale(0);
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 4px;
+    text-decoration: none;
+    background-color: white;
+    border-bottom: 2px solid var(--lightgray);
+}
+
+.book-title {
+    font-size: 13px;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.book-author {
+    font-size: 13px;
+    color: #555;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Media Queries para ajustar el diseño en dispositivos móviles */
+@media (max-width: 768px) {
+    .core {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .core {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}

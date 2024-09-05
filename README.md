@@ -67,5 +67,3 @@ GPLv3+, chequea el archivo [LICENCE](LICENCE)
 ---------------------------
 
 Inspirado en [Letras viajeras](https://github.com/gcoop-libre/letras_viajeras/) de la cooperativa [GCOOP](https://www.gcoop.coop/)
-
-Tema basado en [aside](https://github.com/dansup/bulma-templates/blob/gh-pages/css/aside.css) de [dansup](https://github.com/dansup) con licencia MIT

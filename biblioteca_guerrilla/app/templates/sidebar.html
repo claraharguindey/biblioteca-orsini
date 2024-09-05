@@ -2,7 +2,7 @@
     <div>
         <div class="main">
             {% for filter in general_filters %}
-            <a href="{{ filter.url }}" class="item"><span class="icon"><i class="{{filter.iconclass}}"></i></span><span class="name">{{ filter.name|capitalize }}</span></a>
+            <a href="{{ filter.url }}" class="item"><span class="name">{{ filter.name|capitalize }}</span></a>
             {% endfor %}
         </div>
     </div>
@@ -11,7 +11,7 @@
     <div>
         <div class="main">
             {% for filter in general_filters %}
-            <a href="{{ filter.url }}" class="item"><span class="icon"><i class="{{filter.iconclass}}"></i></span><span class="name">{{ filter.name|capitalize }}</span></a>
+            <a href="{{ filter.url }}" class="item"><span class="name">{{ filter.name|capitalize }}</span></a>
             {% endfor %}
         </div>
     </div>

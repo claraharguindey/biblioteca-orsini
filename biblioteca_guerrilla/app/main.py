@@ -29,20 +29,20 @@ def get_filters():
     """Filters on the left bar"""
     filters = (
         {'url': url_for('all_the_books_view'),
-         'name': _("Books"),
-         'iconclass': "fa fa-book"},
+         'name': _("Libros"),
+        },
         {'url': url_for('authors_view'),
-         'name': _("Authors"),
-         'iconclass': "fa fa-users"},
+         'name': _("Autoras"),
+        },
         {'url': url_for('tags_view'),
-         'name': _("Categories"),
+         'name': _("Tags"),
          'iconclass': "fa fa-list"},
         # {'url': url_for('idiomas'),
         # 'name': _("Langueges"),
         # 'fa-icon-class': "fa fa-language"},
-        {'url': url_for('series_view'),
-         'name': _("Series"),
-         'iconclass': "fa fa-indent"},
+        # {'url': url_for('series_view'),
+        #  'name': _("Series"),
+        #  'iconclass': "fa fa-indent"},
     )
     return filters
 
@@ -207,7 +207,7 @@ def format_elements_for_template(elements):
 # Views
 
 
-@app.route('/')
+@app.route('/books/')
 def index():
     return render_template('index.html',
                            title="",
@@ -217,7 +217,7 @@ def index():
                            )
 
 
-@app.route('/books/')
+@app.route('/')
 def all_the_books_view():
     """Show the books"""
     books = get_books()

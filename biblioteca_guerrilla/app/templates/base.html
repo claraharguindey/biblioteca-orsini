@@ -3,17 +3,13 @@
 
     <head>
         <meta charset="utf-8">
-        <meta name="content" content="{{ _('Books, a lot of them!') }}">
-        <meta name="description" content="{{ _('This is a site that share books!') }}">
-        <meta name="keywords" content="{{ _('sharing, is, caring, books, downloads') }}">
-        <meta name="author" content="{{ _('Kaze and colaborators') }}">
+        <meta name="content" content="{{ _('Libros, libros') }}">
+        <meta name="author" content="{{ _('Clara Harguindey x Archivo Orsini') }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>Biblioteca Guerrilla</title>
-
-        <link rel="stylesheet" type="text/css" href="/static/css/font-awesome.css">
-        <link rel="stylesheet" type="text/css" href="/static/css/bulma.css">
+        <title>Biblioteca Orsini</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/styles.css" >
         <link rel="stylesheet" type="text/css" href="/static/css/aside.css">
         <link rel="stylesheet" type="text/css" href="/static/css/custom.css">
         <link rel="shortcut icon" href="/static/img/favicon.ico">
@@ -26,10 +22,6 @@
         {% include "header.html" %}
         {% block content %}
         {% endblock %}
-        <footer>
-            {% include "footer.html" %}
-        </footer>
-        <script async type="text/javascript" src="/static/js/bulma.js"></script>
     </body>
     {% block extra_js %}
     {% endblock %}

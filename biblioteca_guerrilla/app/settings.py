@@ -17,9 +17,9 @@ ADMIN_EMAIL = "kaze@rlab.be"
 # Connector
 CONNECTOR = "connector.calibre.calibre"
 CONNECTOR_OPTIONS = {
-    "path": os.path.realpath('/home/facu/Biblioteca de calibre/metadata.db'),
+    "path": os.path.realpath('/users/claraharguindey/Biblioteca de calibre/metadata.db'),
 }
-BASE_BOOK_PATH = os.path.realpath('/home/facu/Biblioteca de calibre/')
+BASE_BOOK_PATH = os.path.realpath('/users/claraharguindey/Biblioteca de calibre/')
 
 # Frozen-Flask
 FREEZER_DESTINATION = "/tmp/biblioteca-guerrilla/"
