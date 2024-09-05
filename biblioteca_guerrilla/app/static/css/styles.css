@@ -11,23 +11,33 @@
     font-size: 12px;
 }
 
-/* Estilo del grid de libros */
+.wrapper {
+    padding: 16px;
+}
+
+.button {
+    margin-bottom: 8px;
+    color: #a4a4a4;
+}
+
+.button:hover {
+    color: black;
+}
+
 .core {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 40px 16px;
-    padding: 0px 16px 80px 16px;
+    padding-bottom: 80px;
     width: 100%;
     align-content: start;
 }
 
-/* Estilo para cada libro */
 .entrada {
     display: flex;
     flex-direction: column;
     text-decoration: none;
     color: black;
-    z-index: 3;
 }
 
 .portada {
@@ -43,9 +53,9 @@
     transition: filter 0.5s ease;
 }
 
-/* Cambia el filtro de la imagen al pasar el ratón */
 .entrada:hover .portada img {
     filter: grayscale(0);
+    border-radius: 2px;
 }
 
 .info {
@@ -81,7 +91,10 @@
 }
 .tags-list {
     width: 50%;
-    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 16px;
+    gap: 10px;
 }
 .list-tag {
     background: white;
@@ -91,13 +104,27 @@
     border-radius: 100px;
     margin-bottom: 1px;
 }
-.tag {
+.tag,
+.download-button {
     background: #cf3d35;
     color: black;
     padding: 4px 8px;
     margin: 0px;
     border-radius: 100px;
     margin-bottom: 1px;
+}
+.download-button {
+    background: black;
+    color: white;
+}
+.book-container {
+    margin: 16px;
+    min-height: 75%;
+}
+.book-image {
+    max-width: 200px;
+    margin-top: 16px;
+    margin-bottom: 12px;
 }
 footer {
     position: absolute;
@@ -119,7 +146,7 @@ footer a {
     margin: 0px 4px;
     transition: 0.2s;
 }
-/* Media Queries para ajustar el diseño en dispositivos móviles */
+
 @media (max-width: 768px) {
     .core {
         grid-template-columns: 1fr;

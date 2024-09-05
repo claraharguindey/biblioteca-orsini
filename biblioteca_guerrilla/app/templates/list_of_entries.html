@@ -6,7 +6,7 @@
 {% set colores = ['red', 'green', 'blue', 'orange', 'purple', 'yellow', 'teal', 'pink'] %}
 {% set color_index = 0 %}
 
-<div class="tags-list" style="display: flex; flex-wrap: wrap; gap: 10px;">
+<div class="tags-list">
     {% for key, value in entries|dictsort %}
         {% for element in value %}
         <div class="tag-item" style="background-color: {{ colores[color_index % colores|length] }}; padding: 10px; border-radius: 5px; color: white;">
@@ -22,10 +22,9 @@
 
 <div class="columns">
     {% include "sidebar.html" %}
-    <!-- A la derecha del sidebar -->
-    <div class="column is-10 content">
+    <div class="column content">
         <div class="title">{{ title|capitalize }}</div>
-        <div class="columns is-multiline files">
+        <div class="columns files">
             {{ genera_lista(entries) }}
         </div>
     </div>

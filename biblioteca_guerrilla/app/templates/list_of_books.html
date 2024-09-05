@@ -31,10 +31,12 @@
 {% endfor %}
 {% endmacro %}
 
-<div class="columns">
-    {% include "sidebar.html" %}
-    <div class="content column is-10">
-        <div class="title">{{ title|capitalize }}</div>
+<div class="wrapper">
+    <a class="button" href="{{ url_for("all_the_books_view") }}"">Volver</a>
+    <div class="tags-list">
+        <span class="list-tag">{{ title|capitalize }}</span>
+    </div>
+    <div class="content column">
         <div class="core">
             {{ genera_columnas(books) }}
         </div>

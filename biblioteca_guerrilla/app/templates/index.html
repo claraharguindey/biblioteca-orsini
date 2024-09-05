@@ -4,7 +4,7 @@
 
 {% macro genera_lista(entries) %}
 
-<div class="tags-list" style="display: flex; flex-wrap: wrap; gap: 10px;">
+<div class="tags-list">
     {% for key, value in entries|dictsort %}
     {% for element in value %}
     <div class="list-tag">
@@ -19,9 +19,7 @@
 
 {% macro genera_item_book(title, authors, ruta_cover, tags, publication_date) %}
 <a class="entrada" href="{{ url_for('book_view', book_name=urlencode(title)) }}">
-
     <div class="book-tags">
-
         {% for tag in tags %}
         <span class="tag">{{ tag }}</span>{% if not loop.last %} {% endif %}
         {% endfor %}
@@ -59,12 +57,11 @@
 {% endfor %}
 {% endmacro %}
 
-<div class="columns">
-    <!-- {% include "sidebar.html" %} -->
-    <div class="columns is-multiline files">
+<div class="wrapper">
+    <div >
         {{ genera_lista(entries) }}
     </div>
-    <div class="content column is-10">
+    <div class="content column">
         <div class="core">
             {{ genera_columnas(books) }}
         </div>
