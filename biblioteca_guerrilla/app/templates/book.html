@@ -6,25 +6,27 @@
     <div class="title">{{ title }}</div>
     <img class="book-image" src={{ url_for('get_book_cover', path=book.cover) }} alt="{{ _('Book cover') }}">
 
+
     <div class="column">
+        {% for formato, path in book.format.items() %}
+        <a href={{url_for('get_book_download', path=path)}}>
+            <span class="download-button">{{ formato|upper}}</span>
+        </a>
+        {% endfor %}
+        <br><br>
+        {% if book.tags%}
+        {% for tag in book.tags %}
+        <a href={{ url_for('tag_view', tag_name=tag) }}>
+            <span class="tag is-danger">{{ tag|capitalize }}</span>
+        </a>
+        {% endfor %}
+        {% endif %}
+        <br><br>
         <table class="table">
             <tbody>
                 <tr>
                     <td> {{ _('Título') }}:{{ book.title|capitalize }}</td>
 
-                </tr>
-                <tr>
-                    <td>
-
-                        {% if book.tags%}
-                        {{ _('Tags:') }}
-                        {% for tag in book.tags %}
-                        <a href={{ url_for('tag_view', tag_name=tag) }}>
-                            <span class="tag is-danger">{{ tag|capitalize }}</span>
-                        </a>
-                        {% endfor %}
-                        {% endif %}
-                    </td>
                 </tr>
                 <tr>
                     <td> {{ _('Autor:') }}
@@ -47,26 +49,17 @@
                     </td>
                 </tr>
                 <tr>
-                    <td> {{ _('Año:') }}{{ book.publication_date}}</td>
+                    <td> {{ _('Año: ') }}{{ book.publication_date}}</td>
                 </tr>
+                {% if book.sinopsis %}
                 <tr>
                     <td>
-                        {{ _('Descarga:') }}
-                        {% for formato, path in book.format.items() %}
-                        <a href={{url_for('get_book_download', path=path)}}>
-                            <span class="download-button">{{ formato|upper}}</span>
-                        </a>
-                        {% endfor %}
+                        {{ book.sinopsis|safe}}
                     </td>
                 </tr>
+                {% endif %}
             </tbody>
         </table>
-        {% if book.sinopsis %}
-        {{ _('Synopsis:') }}
-        <p>
-            {{ book.sinopsis|safe}}
-        </p>
-        {% endif %}
     </div>
 </div>
 

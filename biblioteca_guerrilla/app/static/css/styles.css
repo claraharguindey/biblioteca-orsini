@@ -147,14 +147,21 @@ footer a {
     transition: 0.2s;
 }
 
+tbody {
+    background-color: white;
+}
+
+tr {
+    width: 100%;
+    border-bottom: 2px solid #e5e5e5;
+    padding: 4px;
+}
+
 @media (max-width: 768px) {
     .core {
         grid-template-columns: 1fr;
     }
-}
-
-@media (max-width: 480px) {
-    .core {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    .tags-list {
+        width: 100%;
     }
 }
