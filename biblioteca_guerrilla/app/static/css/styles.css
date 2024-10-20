@@ -96,14 +96,15 @@
     padding-bottom: 16px;
     gap: 10px;
 }
+
 .list-tag {
     background: white;
-    color: #cf3d35;
     padding: 4px 8px;
     margin: 0px;
     border-radius: 100px;
     margin-bottom: 1px;
 }
+
 .tag,
 .download-button {
     background: #cf3d35;
@@ -155,6 +156,121 @@ tr {
     width: 100%;
     border-bottom: 2px solid #e5e5e5;
     padding: 4px;
+}
+
+.list-tag.Arquitectura {
+    color: #CF3D35;
+    background: white;
+    font-size: 16px;
+}
+
+.list-tag.Arquitectura:hover {
+    color: #CF3D35;
+    background: white;
+    font-size: 16px;
+}
+
+.list-tag.Arte {
+    color: #99BEC8;
+    background: white;
+    font-size: 16px;
+}
+
+.list-tag.Arte:hover {
+    color: #99BEC8;
+    background: white;
+    font-size: 16px;
+}
+
+.list-tag.Capitalismo {
+    color: #EB7A42;
+    background: white;
+    font-size: 16px;
+}
+
+.list-tag.Capitalismo:hover {
+    color: #EB7A42;
+    background: white;
+    font-size: 16px;
+}
+
+.list-tag.Robo {
+    color: #6F8B4E;
+    background: white;
+    font-size: 16px;
+}
+
+.list-tag.Robo:hover {
+    color: #6F8B4E;
+    background: white;
+    font-size: 16px;
+}
+
+.list-tag.Ensayo {
+    color: #A4A4A4;
+    background: white;
+    font-size: 16px;
+    border-radius: 0;
+}
+
+.list-tag.Ensayo:hover {
+    color: #A4A4A4;
+    background: white;
+    font-size: 16px;
+    border-radius: 0;
+}
+
+.list-tag.Narrativa {
+    color: #A4A4A4;
+    background: white;
+    font-size: 16px;
+    border-radius: 0;
+}
+
+.list-tag.Narrativa:hover {
+    color: #A4A4A4;
+    background: white;
+    font-size: 16px;
+    border-radius: 0;
+}
+
+.list-tag.Anarquismo {
+    color: black;
+    background: white;
+    font-size: 16px;
+    border-radius: 0;
+}
+
+.list-tag.Anarquismo:hover {
+    color: white;
+    background: black;
+    font-size: 16px;
+    border-radius: 0;
+}
+
+.tag.Arquitectura {
+    background: #CF3D35;
+    color: black;
+}
+
+.tag.Anarquismo {
+    background: black;
+    color: white;
+}
+
+.tag.Arte {
+    background: #99BEC8;
+    color: black;
+}
+
+.tag.Capitalismo {
+    background: #EB7A42;
+    color: black;
+}
+
+.tag.Robo {
+    background: #6F8B4E;
+    color: black;
 }
 
 @media (max-width: 768px) {

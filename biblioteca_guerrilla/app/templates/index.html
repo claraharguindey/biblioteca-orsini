@@ -7,7 +7,7 @@
 <div class="tags-list">
     {% for key, value in entries|dictsort %}
     {% for element in value %}
-    <div class="list-tag">
+    <div class="list-tag {{ element.element }}">
         <a href="{{ element.url }}" title="{{ element.element | capitalize }}">
             {{ element.element|truncate(50, True)|capitalize }}
         </a>
@@ -21,7 +21,7 @@
 <a class="entrada" href="{{ url_for('book_view', book_name=urlencode(title)) }}">
     <div class="book-tags">
         {% for tag in tags %}
-        <span class="tag">{{ tag }}</span>{% if not loop.last %} {% endif %}
+        <span class="tag {{ tag }}">{{ tag }}</span>{% if not loop.last %} {% endif %}
         {% endfor %}
 
     </div>
