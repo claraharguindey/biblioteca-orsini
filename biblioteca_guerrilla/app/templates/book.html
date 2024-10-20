@@ -17,7 +17,7 @@
         {% if book.tags%}
         {% for tag in book.tags %}
         <a href={{ url_for('tag_view', tag_name=tag) }}>
-            <span class="tag is-danger">{{ tag|capitalize }}</span>
+            <span class="tag is-danger {{tag}}">{{ tag|capitalize }}</span>
         </a>
         {% endfor %}
         {% endif %}
@@ -42,7 +42,7 @@
                         {{ _('Colección:') }}
                         {% for serie in book.series%}
                         <a href={{ url_for('collection_view', serie_name=serie) }}>
-                            <span class="tag ">{{ serie|capitalize }}</span>
+                            <span class="tag {{serie}}">{{ serie|capitalize }}</span>
                         </a>
                         {% endfor %}
                         {% endif %}

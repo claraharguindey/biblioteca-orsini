@@ -34,7 +34,7 @@
 <div class="wrapper">
     <a class="button" href="{{ url_for("all_the_books_view") }}"">Volver</a>
     <div class="tags-list">
-        <span class="list-tag">{{ title|capitalize }}</span>
+        <span class="list-tag {{ title }}">{{ title|capitalize }}</span>
     </div>
     <div class="content column">
         <div class="core">
